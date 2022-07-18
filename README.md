@@ -73,4 +73,4 @@ Agents are started on demand. When not needed an agent pod is stopped.
 JetBrains TeamCity agent container is built the way that it is not running with root user but rather with buildagent user, defined with static UID=1000. This practice is normal in Kubernetes. But Openshift defines more strict rules on UIDs requiring to run with random UIDs from a given range. In order for the container to start a cluster policy is to be created: `oc adm policy add-scc-to-user nonroot -z teamcity --as system:admin`
 
 ### Self-signed certificates
-TBD
+Certificates can be placed in secrets and mounted as volumes in the pod spec
